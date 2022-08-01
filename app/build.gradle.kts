@@ -1,5 +1,6 @@
 plugins {
     java
+    id("de.gliderpilot.semantic-release") version "1.4.2"
     id("org.springframework.boot") version "2.4.2"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
