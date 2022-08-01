@@ -26,6 +26,10 @@ configurations {
 group = "com.example"
 version = "1.0.0"
 
+semanticRelease {
+    releaseBranches.include("main")
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
