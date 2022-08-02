@@ -14,4 +14,9 @@ public class HelloControllerTest {
     public void test() {
         assertEquals("Hello2", controller.getHello().getBody());
     }
+
+    @Test
+    public void test2() {
+        assertEquals("Hello2", controller.getHello().getBody());
+    }
 }
