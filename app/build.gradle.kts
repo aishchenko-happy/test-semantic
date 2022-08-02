@@ -52,7 +52,9 @@ tasks.bootRun {
 }
 
 task("setVersion") {
-    val newVersion = properties["newVersion"] as String
-    val s: String = buildFile.readText().replaceFirst("version = \"" + version + "\"","version = \"" + newVersion + "\"")
-    buildFile.writeText(s)
+    doLast {
+        val newVersion = properties["newVersion"] as String
+        val s: String = buildFile.readText().replaceFirst("version = \"" + version + "\"", "version = \"" + newVersion + "\"")
+        buildFile.writeText(s)
+    }
 }
