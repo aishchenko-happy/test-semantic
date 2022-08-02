@@ -1,6 +1,5 @@
 plugins {
     java
-    id("de.gliderpilot.semantic-release") version "1.4.2"
     id("org.springframework.boot") version "2.4.2"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
@@ -26,10 +25,6 @@ configurations {
 group = "com.example"
 version = "1.0.0"
 
-semanticRelease {
-    releaseBranches.include("main")
-}
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -54,4 +49,10 @@ tasks.test {
 
 tasks.bootRun {
     environment("spring_profiles_active", "local")
+}
+
+task("setVersion") {
+    val newVersion = properties["newVersion"] as String
+    val s: String = buildFile.readText().replaceFirst("version = \"" + version + "\"","version = \"" + newVersion + "\"")
+    buildFile.writeText(s)
 }
