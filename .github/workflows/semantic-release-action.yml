@@ -9,11 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: 'aishchenko-happy/test-semantic'
 
       - run: |
-          chmod -R ugo+rwX .
+          sudo chmod -R ugo+rwX .
 
       - uses: codfish/semantic-release-action@v1
         id: semantic
