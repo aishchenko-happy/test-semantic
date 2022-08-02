@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - run: |
+          chmod -R ugo+rwX .
+
       - uses: codfish/semantic-release-action@v1
         id: semantic
         env:
@@ -20,6 +23,7 @@ jobs:
             [
               'main'
             ]
+          tag_format: '${version}'
           plugins: |
             ['@semantic-release/commit-analyzer', '@semantic-release/release-notes-generator', '@semantic-release/github']
 
