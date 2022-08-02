@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     public ResponseEntity<String> getHello() {
-        return ResponseEntity.ok("Hello");
+        return ResponseEntity.ok("Hello2");
     }
 }
