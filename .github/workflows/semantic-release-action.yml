@@ -10,7 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: 'owner/repo'
+          repository: 'aishchenko-happy/test-semantic'
+
+      - run: |
+          chmod -R ugo+rwX .
 
       - uses: codfish/semantic-release-action@v1
         id: semantic
