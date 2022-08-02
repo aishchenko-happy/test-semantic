@@ -43,8 +43,8 @@ jobs:
         with:
           arguments: setVersion -PnewVersion=${{ steps.semantic.outputs.release-version }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: EndBug/add-and-commit@v9
         with:
-          commit_message: Release ${{ steps.semantic.outputs.release-version }}
-          file_pattern: app/build.gradle.kts
-          tagging_message: ${{ steps.semantic.outputs.release-version }}
+          message: Release ${{ steps.semantic.outputs.release-version }}
+          add: app/build.gradle.kts
+          tag: ${{ steps.semantic.outputs.release-version }}
