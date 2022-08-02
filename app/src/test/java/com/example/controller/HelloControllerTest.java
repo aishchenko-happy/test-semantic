@@ -12,6 +12,11 @@ public class HelloControllerTest {
 
     @Test
     public void test() {
-        assertEquals("Hello", controller.getHello().getBody());
+        assertEquals("Hello2", controller.getHello().getBody());
+    }
+
+    @Test
+    public void test2() {
+        assertEquals("Hello2", controller.getHello().getBody());
     }
 }
