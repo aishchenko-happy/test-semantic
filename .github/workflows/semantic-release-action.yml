@@ -12,8 +12,7 @@ jobs:
 
       - run: |
           cd .git
-          sudo chmod -R g+rws objects
-          cd ..
+          sudo chmod -R ugo+rwX .
 
       - uses: codfish/semantic-release-action@v1
         id: semantic
