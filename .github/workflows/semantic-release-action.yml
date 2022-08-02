@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - run: |
-          chmod -R ugo+rwX .
+        with:
+          repository: 'owner/repo'
 
       - uses: codfish/semantic-release-action@v1
         id: semantic
