@@ -1,24 +1,22 @@
 {
-  "branches": "main",
-  "dryRun": "true",
+  "branches": ["main"],
   "tagFormat": "${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    [
-          "@semantic-release/changelog",
+    [ "@semantic-release/changelog",
           {
-            "changelogFile": "CHANGELOG.md"
+            "changelogFile": "docs/CHANGELOG.md"
           }
     ],
     ["@semantic-release/exec",
           {
-            "verifyReleaseCmd": "./gradlew setVersion -PnewVersion=${nextRelease.version}; \
-            git add app/build.gradle.kts CHANGELOG.md; \
-            git commit -m 'Release ${nextRelease.version}';
-            git tag -a ${nextRelease.version} -m ${nextRelease.notes};
-            git push origin main;"
+            "verifyReleaseCmd": "./gradlew setVersion -PnewVersion=${nextRelease.version};"
           }
-    ]
+    ],
+    ["@semantic-release/git", {
+      "assets": ["app/build.gradle.kts", "docs/CHANGELOG.md"],
+      "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+    }]
   ]
 }
