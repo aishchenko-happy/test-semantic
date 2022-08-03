@@ -38,20 +38,20 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
 
-      - name: Set new version -> ${{ steps.semantic.outputs.release-version }}
-        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-        with:
-          arguments: setVersion -PnewVersion=${{ steps.semantic.outputs.release-version }}
+#      - name: Set new version -> ${{ steps.semantic.outputs.release-version }}
+#        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+#        with:
+#          arguments: setVersion -PnewVersion=${{ steps.semantic.outputs.release-version }}
 
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
 
-      - name: Push new version and release tag
-        uses: EndBug/add-and-commit@v9
-        with:
-          default_author: github_actions
-          message: Release ${{ steps.semantic.outputs.release-version }}
-          add: app/build.gradle.kts
-          tag: ${{ steps.semantic.outputs.release-version }}
+#      - name: Push new version and release tag
+#        uses: EndBug/add-and-commit@v9
+#        with:
+#          default_author: github_actions
+#          message: Release ${{ steps.semantic.outputs.release-version }}
+#          add: app/build.gradle.kts
+#          tag: ${{ steps.semantic.outputs.release-version }}
