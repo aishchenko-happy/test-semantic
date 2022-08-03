@@ -5,12 +5,18 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
+    [
+          "@semantic-release/changelog",
+          {
+            "changelogFile": "CHANGELOG.md"
+          }
+    ],
     ["@semantic-release/exec",
           {
             "verifyReleaseCmd": "./gradlew setVersion -PnewVersion=${nextRelease.version}; \
-            git add app/build.gradle.kts; \
+            git add app/build.gradle.kts CHANGELOG.md; \
             git commit -m 'Release ${nextRelease.version}';
-            git tag ${nextRelease.version};
+            git tag -a ${nextRelease.version} -m ${nextRelease.notes};
             git push origin main;"
           }
     ]
