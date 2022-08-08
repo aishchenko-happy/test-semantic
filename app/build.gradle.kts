@@ -23,7 +23,7 @@ configurations {
 }
 
 group = "com.example"
-version = "4.9.2"
+version = "4.9.3"
 
 repositories {
     mavenLocal()

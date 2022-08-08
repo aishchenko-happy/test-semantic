@@ -1,3 +1,10 @@
+## [4.9.3](https://github.com/aishchenko-happy/test-semantic/compare/4.9.2...4.9.3) (2022-08-08)
+
+
+### Bug Fixes
+
+* 333 ([#8](https://github.com/aishchenko-happy/test-semantic/issues/8)) ([d796697](https://github.com/aishchenko-happy/test-semantic/commit/d796697b51f59f1b6c0b8140a0d64149dd341bad))
+
 ## [4.9.2](https://github.com/aishchenko-happy/test-semantic/compare/4.9.1...4.9.2) (2022-08-08)
 
 
