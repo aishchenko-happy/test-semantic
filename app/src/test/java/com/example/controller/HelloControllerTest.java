@@ -6,7 +6,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Some tests
+ * Some tests 2
  */
 @ExtendWith(MockitoExtension.class)
 public class HelloControllerTest {

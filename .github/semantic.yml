@@ -1,2 +1,6 @@
 enabled: true
 titleOnly: true
+commitsOnly: false
+allowMergeCommits: true
+allowRevertCommits: true
+targetUrl: https://www.conventionalcommits.org/en/v1.0.0/#specification
